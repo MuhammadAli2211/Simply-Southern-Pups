@@ -1,0 +1,359 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.petSections {
+    width: 100%;
+    padding: 80px clamp(16px, 5vw, 80px);
+    background: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.smallText {
+    color: #555;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.sectionHeader h2,
+.customerTitle h2 {
+    font-size: 38px;
+    color: #002A54;
+    margin-top: 5px;
+}
+
+.viewBtn,
+.exploreBtn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+
+.knowledgeSection {
+    margin-bottom: 120px;
+}
+
+.viewBtn {
+    padding: 14px 28px;
+    border: 2px solid #002A54;
+    border-radius: 40px;
+    background: white;
+    color: #002A54;
+}
+
+.viewBtn:hover {
+    background: #002A54;
+    color: white;
+}
+
+.knowledgeGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.knowledgeCard {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: 0.4s;
+}
+
+.knowledgeCard:hover {
+    transform: translateY(-8px);
+}
+
+.knowledgeImage {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+}
+
+.knowledgeImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.knowledgeCard:hover img {
+    transform: scale(1.08);
+}
+
+.knowledgeContent {
+    padding: 24px;
+}
+
+.categoryTag {
+    background: #00A7E1;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 18px;
+}
+
+.knowledgeContent h3 {
+    color: #002A54;
+    font-size: 22px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+}
+
+.knowledgeContent p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+.customerSection {
+    text-align: center;
+}
+
+.customerTitle {
+    margin-bottom: 60px;
+}
+
+.line {
+    width: 80px;
+    height: 5px;
+    background: #00A7E1;
+    margin: 16px auto 0;
+    border-radius: 20px;
+}
+
+.customerGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.customerCard {
+    border-radius: 35px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.customerImageArea {
+    height: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.customerImageArea img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.customerContent {
+    background: #002A54;
+    color: white;
+    padding: 30px 20px;
+}
+
+.customerContent h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.customerContent p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+}
+
+
+.exploreBtn {
+    background: #002A54;
+    color: white;
+    padding: 16px 34px;
+    border-radius: 40px;
+    font-size: 16px;
+}
+
+.exploreBtn:hover {
+    background: #001a35;
+}
+
+
+.footer-section {
+    width: 100%;
+    background: #EEE1C7;
+    padding: 60px 7% 35px;
+    margin-top: 120px;
+    border-radius: 24px 24px 0 0;
+    box-sizing: border-box;
+}
+
+.newsletterBox {
+    background: #002A54;
+    border-radius: 18px;
+    padding: 28px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.newsletterBox h2 {
+    color: white;
+    font-size: 30px;
+}
+
+.newsletterInput {
+    flex: 1;
+    min-width: 320px;
+    background: white;
+    border-radius: 12px;
+    padding: 8px;
+    display: flex;
+    gap: 10px;
+}
+
+.newsletterInput input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 14px;
+}
+
+.newsletterInput button {
+    background: #002A54;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.footerNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0 30px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+}
+
+.footerNav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.footerNav ul li a {
+    text-decoration: none;
+    color: #111;
+}
+.socialIcons {
+    display: flex;
+    gap: 16px;
+}
+
+.socialIcons a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #002A54;
+}
+
+.footerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footerLinks {
+    display: flex;
+    gap: 24px;
+}
+
+/* LOGO */
+.footerLogo img {
+    width: 100%;
+    max-width: 200px;
+    display: block;
+}
+
+
+@media(max-width:992px) {
+    .knowledgeGrid,
+    .customerGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width:768px) {
+    .knowledgeGrid,
+    .customerGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .petSections {
+        padding: 60px 5%;
+    }
+
+    .footer-section {
+        padding: 50px 5% 30px;
+    }
+
+    .newsletterBox {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .newsletterInput {
+        width: 100%;
+        flex-direction: column;
+        background: transparent;
+        padding: 0;
+    }
+
+    .newsletterInput button {
+        width: 100%;
+    }
+
+    .footerBottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
