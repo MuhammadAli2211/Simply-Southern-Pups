@@ -4,64 +4,68 @@ html, body {
     overflow-x: hidden;
     width: 100%;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
+/* --- Base Container --- */
 .petSections {
     width: 100%;
-    padding: 80px clamp(16px, 5vw, 80px);
+    padding: clamp(40px, 8vw, 80px) clamp(16px, 5vw, 80px);
     background: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
+/* --- Typography & Global Headers --- */
 .sectionHeader {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
+    align-items: flex-end;
+    margin-bottom: clamp(24px, 5vw, 40px);
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .smallText {
     color: #555;
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
     font-weight: 400;
+    display: block;
 }
 
 .sectionHeader h2,
 .customerTitle h2 {
-    font-size: 38px;
+    font-size: clamp(26px, 4vw, 38px);
     color: #002A54;
     margin-top: 5px;
+    line-height: 1.2;
 }
 
+/* --- Buttons --- */
 .viewBtn,
 .exploreBtn {
     border: none;
     outline: none;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
     font-weight: 600;
+    white-space: nowrap;
 }
 
-
+/* --- Knowledge Section --- */
 .knowledgeSection {
-    margin-bottom: 120px;
+    margin-bottom: clamp(60px, 10vw, 120px);
 }
 
 .viewBtn {
-    padding: 14px 28px;
+    padding: 12px 24px;
     border: 2px solid #002A54;
     border-radius: 40px;
     background: white;
     color: #002A54;
+    font-size: clamp(14px, 1.5vw, 16px);
 }
 
 .viewBtn:hover {
@@ -72,7 +76,7 @@ html, body {
 .knowledgeGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: clamp(20px, 3vw, 30px);
 }
 
 .knowledgeCard {
@@ -80,7 +84,9 @@ html, body {
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    transition: 0.4s;
+    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
 }
 
 .knowledgeCard:hover {
@@ -89,7 +95,8 @@ html, body {
 
 .knowledgeImage {
     width: 100%;
-    height: 260px;
+    aspect-ratio: 16 / 11;
+    height: auto;
     overflow: hidden;
 }
 
@@ -97,73 +104,81 @@ html, body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: 0.5s;
+    transition: 0.5s ease;
 }
 
 .knowledgeCard:hover img {
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
 .knowledgeContent {
-    padding: 24px;
+    padding: clamp(16px, 3vw, 24px);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .categoryTag {
     background: #00A7E1;
     color: white;
-    padding: 8px 16px;
+    padding: 6px 14px;
     border-radius: 30px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
     display: inline-block;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
+    align-self: flex-start;
 }
 
 .knowledgeContent h3 {
     color: #002A54;
-    font-size: 22px;
+    font-size: clamp(18px, 2.2vw, 22px);
     line-height: 1.4;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
 }
 
 .knowledgeContent p {
     color: #555;
-    font-size: 15px;
-    line-height: 1.8;
+    font-size: clamp(14px, 1.6vw, 15px);
+    line-height: 1.6;
 }
 
-
+/* --- Customer Testimonials Section --- */
 .customerSection {
     text-align: center;
 }
 
 .customerTitle {
-    margin-bottom: 60px;
+    margin-bottom: clamp(30px, 6vw, 60px);
 }
 
 .line {
     width: 80px;
     height: 5px;
     background: #00A7E1;
-    margin: 16px auto 0;
+    margin: 12px auto 0;
     border-radius: 20px;
 }
 
 .customerGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-bottom: 50px;
+    gap: clamp(20px, 3vw, 30px);
+    margin-bottom: clamp(30px, 5vw, 50px);
 }
 
 .customerCard {
     border-radius: 35px;
     overflow: hidden;
     box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
 }
 
 .customerImageArea {
-    height: 340px;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    max-height: 340px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -179,19 +194,23 @@ html, body {
 .customerContent {
     background: #002A54;
     color: white;
-    padding: 30px 20px;
+    padding: clamp(20px, 4vw, 30px) 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 .customerContent h3 {
-    font-size: 24px;
-    margin-bottom: 12px;
+    font-size: clamp(18px, 2.5vw, 24px);
+    margin-bottom: 8px;
 }
 
 .customerContent p {
-    font-size: 14px;
+    font-size: clamp(13px, 1.5vw, 14px);
     color: rgba(255,255,255,0.8);
+    line-height: 1.5;
 }
-
 
 .exploreBtn {
     background: #002A54;
@@ -205,38 +224,38 @@ html, body {
     background: #001a35;
 }
 
-
+/* --- Footer Area --- */
 .footer-section {
     width: 100%;
     background: #EEE1C7;
-    padding: 60px 7% 35px;
-    margin-top: 120px;
+    padding: clamp(40px, 6vw, 60px) clamp(16px, 5vw, 7%) 35px;
+    margin-top: clamp(60px, 10vw, 120px);
     border-radius: 24px 24px 0 0;
-    box-sizing: border-box;
 }
 
 .newsletterBox {
     background: #002A54;
     border-radius: 18px;
-    padding: 28px 30px;
+    padding: clamp(20px, 4vw, 36px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    gap: 24px;
 }
 
 .newsletterBox h2 {
     color: white;
-    font-size: 30px;
+    font-size: clamp(20px, 3vw, 30px);
+    line-height: 1.3;
+    text-align: left;
 }
 
 .newsletterInput {
     flex: 1;
-    min-width: 320px;
+    max-width: 500px;
     background: white;
-    border-radius: 12px;
-    padding: 8px;
+    border-radius: 14px;
+    padding: 6px;
     display: flex;
     gap: 10px;
 }
@@ -245,16 +264,26 @@ html, body {
     flex: 1;
     border: none;
     outline: none;
-    padding: 14px;
+    padding: 12px 16px;
+    font-size: 15px;
+    background: transparent;
+    width: 100%;
 }
 
 .newsletterInput button {
     background: #002A54;
     color: white;
     border: none;
-    padding: 14px 24px;
+    padding: 12px 24px;
     border-radius: 10px;
     cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.newsletterInput button:hover {
+    background: #001d3d;
 }
 
 .footerNav {
@@ -263,34 +292,48 @@ html, body {
     align-items: center;
     padding: 40px 0 30px;
     border-bottom: 1px solid rgba(0,0,0,0.1);
-    flex-wrap: wrap;
+    gap: 24px;
 }
 
 .footerNav ul {
     display: flex;
-    gap: 40px;
+    gap: clamp(20px, 4vw, 40px);
     list-style: none;
-    flex-wrap: wrap;
 }
 
 .footerNav ul li a {
     text-decoration: none;
     color: #111;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s;
 }
+
+.footerNav ul li a:hover {
+    color: #00A7E1;
+}
+
 .socialIcons {
     display: flex;
-    gap: 16px;
+    gap: 12px;
 }
 
 .socialIcons a {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: white;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #002A54;
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.socialIcons a:hover {
+    transform: translateY(-3px);
+    background: #002A54;
+    color: white;
 }
 
 .footerBottom {
@@ -298,62 +341,131 @@ html, body {
     justify-content: space-between;
     align-items: center;
     padding-top: 30px;
-    flex-wrap: wrap;
-    gap: 20px;
+    gap: 24px;
+}
+
+.footerBottom p {
+    font-size: 14px;
+    color: #555;
 }
 
 .footerLinks {
     display: flex;
-    gap: 24px;
+    gap: 20px;
 }
 
-/* LOGO */
+.footerLinks a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+.footerLinks a:hover {
+    color: #002A54;
+}
+
 .footerLogo img {
     width: 100%;
-    max-width: 200px;
+    max-width: 160px;
+    height: auto;
     display: block;
 }
 
+/* --- Responsive Media Queries --- */
 
-@media(max-width:992px) {
+/* Medium Devices (Tablets, landscape or portrait layout changes) */
+@media (max-width: 992px) {
     .knowledgeGrid,
     .customerGrid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
-}
-
-@media(max-width:768px) {
-    .knowledgeGrid,
-    .customerGrid {
-        grid-template-columns: 1fr;
-    }
-
-    .petSections {
-        padding: 60px 5%;
-    }
-
-    .footer-section {
-        padding: 50px 5% 30px;
-    }
-
+    
     .newsletterBox {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .newsletterBox h2 {
+        text-align: center;
     }
 
     .newsletterInput {
-        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Small Devices (Large Phones to Small Tablets) */
+@media (max-width: 768px) {
+    .sectionHeader {
         flex-direction: column;
-        background: transparent;
-        padding: 0;
+        align-items: flex-start;
+        gap: 14px;
     }
 
-    .newsletterInput button {
-        width: 100%;
+    .viewBtn {
+        align-self: flex-start;
+    }
+
+    .footerNav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footerNav ul {
+        justify-content: center;
     }
 
     .footerBottom {
         flex-direction: column;
         text-align: center;
+        gap: 20px;
+    }
+
+    /* Fix ordering for neat presentation on mobile layout */
+    .footerBottom p {
+        order: 3;
+    }
+    .footerLogo {
+        order: 1;
+    }
+    .footerLinks {
+        order: 2;
+        justify-content: center;
+    }
+}
+
+/* Extra Small Devices (Smartphones) */
+@media (max-width: 576px) {
+    .knowledgeGrid,
+    .customerGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletterInput {
+        flex-direction: column;
+        background: transparent;
+        padding: 0;
+        gap: 12px;
+    }
+
+    .newsletterInput input {
+        background: white;
+        border-radius: 12px;
+        padding: 16px;
+    }
+
+    .newsletterInput button {
+        width: 100%;
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .footerNav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
     }
 }
